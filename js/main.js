@@ -72,3 +72,5 @@
 // // new WOW().init({
 // //   boxClass: "wow",
 // // });
+
+preloadAll(initPageIntro);

@@ -1,3 +1,7 @@
+var isClicked = false;
+var isDone = false;
+const preloader = document.getElementById('preloader');
+
 const removeItem = (item) => {
   gsap.to(item, {
     opacity: 0,
@@ -8,7 +12,9 @@ const removeItem = (item) => {
     },
   });
 };
-const removePreloader = () => removeItem(document.getElementById('preloader'));
+const removePreloader = () => {
+  if (preloader) removeItem(preloader);
+};
 
 const preloadSRC = (item) => {
   return new Promise((resolve) => {
@@ -28,20 +34,40 @@ const preloadSRC = (item) => {
   });
 };
 
-const preloadAll = () => {
+const preloadAll = (whenDone = () => {}) => {
   const promiseArr = [];
+
+  if (preloader)
+    preloader.addEventListener('click', () => {
+      console.log('click true');
+      isClicked = true;
+      if (isDone) {
+        console.log('clicked and downloaded removing preloader');
+        removePreloader();
+        whenDone();
+      }
+    });
 
   document.querySelectorAll('[data-src]').forEach((item) => {
     promiseArr.push(preloadSRC(item));
   });
-  if (promiseArr.length === 0) return removePreloader();
+  if (promiseArr.length === 0) {
+    console.log('nothing to load removing preloader');
+    whenDone();
+    removePreloader();
+    return;
+  }
+
   Promise.all(promiseArr)
     .then(() => {
-      removePreloader();
+      isDone = true;
+      if (isClicked) {
+        console.log('everythiong downloaded removing preloader');
+        removePreloader();
+        whenDone();
+      }
     })
     .catch((error) => {
       console.error('Error preloading videos', error);
     });
 };
-
-preloadAll();

@@ -15,7 +15,7 @@
   </head>
 
   <body>
-    <!-- <div class="preloader" id="preloader">
+    <div class="preloader" id="preloader">
       <div class="preloader__title">
         <span
           ><img src="./images/components/text-super.png" alt="SUPER"
@@ -32,9 +32,18 @@
           <div></div>
         </div>
       </div>
-    </div> -->
+    </div>
     <div class="pageintro">
-
+      <div class="pageintro__bg">
+        <video
+          data-src="videos/chest-backdrop-animation.webm"
+          id="pageintro-bg-vidio"></video>
+      </div>
+      <div class="pageintro__bg _transition">
+        <video
+          data-src="videos/character-spin.webm"
+          id="pageintro-transition-vidio"></video>
+      </div>
     </div>
     <!-- <audio
       controls
@@ -44,8 +53,9 @@
     <div class="main"></div>
     <script src="./js/gsap.min.js"></script>
     <script src="./js/gsap.scroll-trigger.js"></script>
-    <script src="./js/main.js"></script>
     <script src="./js/preload.js"></script>
+    <script src="./js/pageintro.js"></script>
+    <script src="./js/main.js"></script>
     <script>
       // console.log('mouseover');
       // document.querySelector('.preloader').onmouseenter = () => {
