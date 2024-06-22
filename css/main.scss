@@ -5,14 +5,13 @@
 @import './components/1-main/nulifier.scss';
 // 2-layout components
 @import './components/2-layout/components.scss';
+@import './components/2-layout/containers.scss';
 @import './components/2-layout/spinner.scss';
 @import './components/2-layout/pageintro.scss';
 @import './components/2-layout/footer.scss';
-@import './components/2-layout/header.scss';
-@import './components/2-layout/nav.scss';
 
 // 3-pages components
-@import './components/3-pages/index.scss';
+@import './components/3-pages/home.scss';
 
 // responsive
 @import './components/2-layout/responsive.scss';

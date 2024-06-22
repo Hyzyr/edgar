@@ -1,10 +1,10 @@
-const pageIntorWrapper = document.querySelector('.pageintro');
+const pageIntroWrapper = document.querySelector('.pageintro');
 const pageIntorBgVid = document.getElementById('pageintro-bg-vidio');
 const pageIntorTranVid = document.getElementById('pageintro-transition-vidio');
 
-const caseDrop = pageIntorWrapper.querySelector('._case-drop');
-const caseOpen = pageIntorWrapper.querySelector('._case-open');
-const caseIdle = pageIntorWrapper.querySelector('._case-idle');
+const caseDrop = pageIntroWrapper?.querySelector('._case-drop') || null;
+const caseOpen = pageIntroWrapper?.querySelector('._case-open') || null;
+const caseIdle = pageIntroWrapper?.querySelector('._case-idle') || null;
 
 let initTimeline = null;
 
@@ -39,11 +39,11 @@ const initCase = () => {
     })
     .play();
 };
-const removeIntro = () => {
+const removeIntro = (_callback) => {
   initTimeline.clear();
   toggleCaseState(null);
   let timeline = gsap.timeline();
-  pageIntorWrapper.onclick = null;
+  pageIntroWrapper.onclick = null;
   timeline
     .to(caseIdle, {
       display: 'none',
@@ -84,21 +84,20 @@ const removeIntro = () => {
       {
         duration: 2.2,
         onComplete: () => {
-          pageIntorWrapper.remove();
+          pageIntroWrapper.remove();
           timeline.clear();
+          if (_callback) _callback();
         },
       },
       '<'
     )
     .play();
 };
-const initPageIntro = () => {
+const initPageIntro = ({ afterTapAnimation }) => {
   pageIntorBgVid.play();
   initCase();
-  pageIntorWrapper.dataset.init = 'true';
-};
-
-pageIntorWrapper.onclick = () => {
-  if (pageIntorWrapper.dataset.init === 'true') removeIntro();
-  else initPageIntro();
+  // pageIntroWrapper.dataset.init = 'true';
+  pageIntroWrapper.onclick = () => {
+    removeIntro(afterTapAnimation);
+  };
 };

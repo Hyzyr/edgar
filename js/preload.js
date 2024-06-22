@@ -1,6 +1,7 @@
 var isClicked = false;
 var isDone = false;
 const preloader = document.getElementById('preloader');
+const preloaderText = document.getElementById('preloader-text');
 
 const removeItem = (item) => {
   gsap.to(item, {

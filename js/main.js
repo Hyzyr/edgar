@@ -73,4 +73,15 @@
 // //   boxClass: "wow",
 // // });
 
-preloadAll(initPageIntro);
+const mainBg = document.getElementById('main-bg');
+const mainMusic = document.getElementById('main-music');
+
+const afterPreload = () => {
+  initPageIntro({
+    afterTapAnimation: () => {
+      mainBg.play();
+      mainMusic.play();
+    },
+  });
+};
+preloadAll(afterPreload);

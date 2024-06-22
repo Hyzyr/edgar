@@ -25,7 +25,7 @@
         /></span>
       </div>
       <div class="preloader__spinner">
-        <span>loading pls wait ...</span>
+        <span id="preloader-text">loading pls wait ...</span>
         <div class="spinner">
           <div></div>
           <div></div>
@@ -64,24 +64,337 @@
     </div>
     <main class="main">
       <div class="main__bg bg">
-        <video data-src="./videos/hero-bg-animation.webm"></video>
+        <audio
+          class="hidden"
+          id="main-music"
+          data-src="sounds/home-screen-music-loop.MP3"
+          loop></audio>
+        <video
+          id="main-bg"
+          loop
+          data-src="./videos/hero-bg-animation.webm"></video>
       </div>
       <section class="hero">
-        <div class="hero__banner"></div>
-        <div class="hero__content">.hero__content</div>
+        <div class="container">
+          <div class="hero__inner">
+            <div class="hero__banner">
+              <img
+                data-src="./images/edgar-animation-video.gif"
+                alt="edgar-animation" />
+            </div>
+            <div class="hero__content">
+              <div class="hero__content-header">
+                <h3>NEW BRAWLER!</h3>
+                <div class="hero__label">
+                  <strong>$EDGAR</strong>
+                  <small>Rich Perro Loco</small>
+                  <span>2/7 Epic Brawlers</span>
+                </div>
+              </div>
+              <div class="hero__content-text">
+                Edgar is no normal dog ese. Edgar is your Solana dawg puta
+                cabrón. No messin around, Edgar is the baddest perro on the
+                block mijo. Call him puta chingón de Mexico. Respect to Edgar
+                the OG vato loco.
+              </div>
+              <div class="hero__content-links">
+                <ul>
+                  <li>
+                    <a href="#CA"></a>
+                    <img src="./images/social/CA.png" alt="" />
+                    <span class="_pink">CA</span>
+                  </li>
+                  <li>
+                    <a href="#telegram"></a>
+                    <img src="./images/social/telegram-logo.png" alt="" />
+                    <span class="_green">TELEGRAM</span>
+                  </li>
+                  <li>
+                    <a href="#x"></a>
+                    <img src="./images/social/x-logo.png" alt="" />
+                    <span class="_blue">TWITTER/X</span>
+                  </li>
+                  <li>
+                    <a href="#dex"></a>
+                    <img src="./images/social/dex-logo.png" alt="" />
+                    <span class="_orange">DEX</span>
+                  </li>
+                </ul>
+                <a href="#" class="circlebutton">
+                  <div class="ratioImage">
+                    <img
+                      src="./images/components/circle-button-bg.svg"
+                      alt="circle" />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
+      <section class="inventory" id="inventory-wrapper">
+        <div class="container">
+          <div class="inventory__inner">
+            <div class="inventory__inner-edgar">
+              <div class="ratioImage">
+                <img
+                  class="_bg"
+                  src="images/components/golden-frame-big.svg"
+                  alt="frame" />
+                <img src="images/edgar-final.png" alt="frame" class="_item" />
+              </div>
+            </div>
+            <div class="inventory__inner-items" id="inventory">
+              <span
+                class="inventory__inner-items-line"
+                id="inventory-line"></span>
+              <div class="inventory__item">
+                <div class="inventory__item-image">
+                  <div class="ratioImage">
+                    <img
+                      class="_bg"
+                      src="images/components/golden-frame.svg"
+                      alt="frame" />
+
+                    <img
+                      src="images/items/item-1.png"
+                      alt="frame"
+                      class="_item" />
+                  </div>
+                </div>
+                <div class="inventory__item-number">1</div>
+                <div class="inventory__item-title">
+                  <span>Bandana Roja</span>
+                  <div class="inventory__item-title-bg">
+                    <img
+                      src="images/components/golden-frame-small.svg"
+                      alt="frame" />
+                  </div>
+                </div>
+              </div>
+              <div class="inventory__item">
+                <div class="inventory__item-image">
+                  <div class="ratioImage">
+                    <img
+                      class="_bg"
+                      src="images/components/golden-frame.svg"
+                      alt="frame" />
+
+                    <img
+                      src="images/items/item-2.png"
+                      alt="frame"
+                      class="_item" />
+                  </div>
+                </div>
+                <div class="inventory__item-number">2</div>
+                <div class="inventory__item-title">
+                  <span>Vato Loco Earrings</span>
+                  <div class="inventory__item-title-bg">
+                    <img
+                      src="images/components/golden-frame-small.svg"
+                      alt="frame" />
+                  </div>
+                </div>
+              </div>
+              <div class="inventory__item">
+                <div class="inventory__item-image">
+                  <div class="ratioImage">
+                    <img
+                      class="_bg"
+                      src="images/components/golden-frame.svg"
+                      alt="frame" />
+
+                    <img
+                      src="images/items/item-3.png"
+                      alt="frame"
+                      class="_item" />
+                  </div>
+                </div>
+                <div class="inventory__item-number">3</div>
+                <div class="inventory__item-title">
+                  <span>New Mexico Glasses</span>
+                  <div class="inventory__item-title-bg">
+                    <img
+                      src="images/components/golden-frame-small.svg"
+                      alt="frame" />
+                  </div>
+                </div>
+              </div>
+              <div class="inventory__item">
+                <div class="inventory__item-image">
+                  <div class="ratioImage">
+                    <img
+                      class="_bg"
+                      src="images/components/golden-frame.svg"
+                      alt="frame" />
+
+                    <img
+                      src="images/items/item-4.png"
+                      alt="frame"
+                      class="_item" />
+                  </div>
+                </div>
+                <div class="inventory__item-number">4</div>
+                <div class="inventory__item-title">
+                  <span>Headphone de la Cartel</span>
+                  <div class="inventory__item-title-bg">
+                    <img
+                      src="images/components/golden-frame-small.svg"
+                      alt="frame" />
+                  </div>
+                </div>
+              </div>
+              <div class="inventory__item">
+                <div class="inventory__item-image">
+                  <div class="ratioImage">
+                    <img
+                      class="_bg"
+                      src="images/components/golden-frame.svg"
+                      alt="frame" />
+
+                    <img
+                      src="images/items/item-5.png"
+                      alt="frame"
+                      class="_item" />
+                  </div>
+                </div>
+                <div class="inventory__item-number">5</div>
+                <div class="inventory__item-title">
+                  <span>Jesucristo Escudo</span>
+                  <div class="inventory__item-title-bg">
+                    <img
+                      src="images/components/golden-frame-small.svg"
+                      alt="frame" />
+                  </div>
+                </div>
+              </div>
+              <div class="inventory__item">
+                <div class="inventory__item-image">
+                  <div class="ratioImage">
+                    <img
+                      class="_bg"
+                      src="images/components/golden-frame.svg"
+                      alt="frame" />
+
+                    <img
+                      src="images/items/item-6.png"
+                      alt="frame"
+                      class="_item" />
+                  </div>
+                </div>
+                <div class="inventory__item-number">6</div>
+                <div class="inventory__item-title">
+                  <span>Cheap Knockoffs</span>
+                  <div class="inventory__item-title-bg">
+                    <img
+                      src="images/components/golden-frame-small.svg"
+                      alt="frame" />
+                  </div>
+                </div>
+              </div>
+              <div class="inventory__item">
+                <div class="inventory__item-image">
+                  <div class="ratioImage">
+                    <img
+                      class="_bg"
+                      src="images/components/golden-frame.svg"
+                      alt="frame" />
+
+                    <img
+                      src="images/items/item-7.png"
+                      alt="frame"
+                      class="_item" />
+                  </div>
+                </div>
+                <div class="inventory__item-number">7</div>
+                <div class="inventory__item-title">
+                  <span>Arma de Pinche Idiota</span>
+                  <div class="inventory__item-title-bg">
+                    <img
+                      src="images/components/golden-frame-small.svg"
+                      alt="frame" />
+                  </div>
+                </div>
+              </div>
+              <div class="inventory__item">
+                <div class="inventory__item-image">
+                  <div class="ratioImage">
+                    <img
+                      class="_bg"
+                      src="images/components/golden-frame.svg"
+                      alt="frame" />
+
+                    <img
+                      src="images/items/item-8.png"
+                      alt="frame"
+                      class="_item" />
+                  </div>
+                </div>
+                <div class="inventory__item-number">8</div>
+                <div class="inventory__item-title">
+                  <span>Ultimo Pantalones</span>
+                  <div class="inventory__item-title-bg">
+                    <img
+                      src="images/components/golden-frame-small.svg"
+                      alt="frame" />
+                  </div>
+                </div>
+              </div>
+              <div class="inventory__item">
+                <div class="inventory__item-image">
+                  <div class="ratioImage">
+                    <img
+                      class="_bg"
+                      src="images/components/golden-frame.svg"
+                      alt="frame" />
+
+                    <img
+                      src="images/items/item-9.png"
+                      alt="frame"
+                      class="_item" />
+                  </div>
+                </div>
+                <div class="inventory__item-number">9</div>
+                <div class="inventory__item-title">
+                  <span>¡Órale! EDGAR</span>
+                  <div class="inventory__item-title-bg">
+                    <img
+                      src="images/components/golden-frame-small.svg"
+                      alt="frame" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="space" style="min-height: 70vh"></div>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__inner">
+            <a href="#" class="footer__inner-gold">
+              <img
+                src="./images/edgar-golden-text.png"
+                alt="edgar-golden-text" />
+            </a>
+            <div class="footer__inner-social">
+              <a href="#telegram">
+                <img src="./images/social/telegram-logo.png" alt=""
+              /></a>
+              <a href="#x"> <img src="./images/social/x-logo.png" alt="" /></a>
+              <a href="#dex">
+                <img src="./images/social/dex-logo.png" alt=""
+              /></a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
     <script src="./js/gsap.min.js"></script>
     <script src="./js/gsap.scroll-trigger.js"></script>
     <script src="./js/preload.js"></script>
     <script src="./js/pageintro.js"></script>
+    <script src="./js/inventory-pin.js"></script>
     <script src="./js/main.js"></script>
-    <script>
-      // console.log('mouseover');
-      // document.querySelector('.preloader').onmouseenter = () => {
-      //   console.log('mouseover');
-      //   sound.play();
-      // };
-    </script>
   </body>
 </html>

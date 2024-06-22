@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 200vh;
+
+  &__bg {
+    position: fixed;
+  }
+}
+.container {
+  max-width: 1950px;
+  margin: 0 auto;
+  padding: 0 60px;
+  flex-grow: 1;
+}
