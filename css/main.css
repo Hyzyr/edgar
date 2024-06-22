@@ -697,6 +697,21 @@ svg {
   white-space: nowrap;
 }
 
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: -1;
+}
+.bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .spinner {
   /* change color here */
   color: #fefd9e;
@@ -795,21 +810,21 @@ svg {
   justify-content: center;
   gap: 2em;
 }
-.pageintro__bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
-.pageintro__bg video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 .pageintro__bg._transition {
-  z-index: -1;
+  z-index: -2;
+}
+.pageintro__case {
+  position: relative;
+  width: 80%;
+  max-width: 420px;
+}
+.pageintro__case .ratioImage {
+  padding-bottom: 150%;
+}
+.pageintro__case img {
+  width: 100%;
+  height: auto;
+  display: none;
 }
 
 .footer {
