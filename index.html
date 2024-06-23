@@ -17,22 +17,22 @@
 
   <body style="overflow: hidden">
     <div class="preloader" id="preloader">
-      <div class="preloader__title">
-        <span
-          ><img src="./images/components/text-super.png" alt="SUPER"
-        /></span>
-        <span
-          ><img src="./images/components/text-edgar.png" alt="EDGAR"
-        /></span>
+      <audio data-src="sounds/super-edgar.MP3" class="hidden" id="preloader-audio"></audio>
+      <div class="preloader__image">
+        <img src="./images/edgar-final.png" alt="SUPER" />
+        <img src="./images/glow-effect.png" class="_bg" alt="glow" />
       </div>
-      <div class="preloader__spinner">
-        <span id="preloader-text">loading pls wait ...</span>
-        <div class="spinner">
-          <div></div>
-          <div></div>
-          <div></div>
+      <div class="preloader__progress">
+        <div class="progress">
+          <span class="progress-text" id="preloader-text">0%</span>
+          <span class="progress-line">
+            <span id="preloader-progress"></span>
+          </span>
         </div>
       </div>
+      <button class="preloader__button" id="preloader-btn">
+        <img src="images/button-image.png" alt="vamos" />
+      </button>
     </div>
     <div class="pageintro">
       <div class="pageintro__case">
@@ -413,7 +413,10 @@
         </div>
       </footer>
       <button class="fixedbutton" id="button-mute">
-        <img class="_off" src="images/components/sound-off.png" alt="sound-off" />
+        <img
+          class="_off"
+          src="images/components/sound-off.png"
+          alt="sound-off" />
         <img class="_on" src="images/components/sound-on.png" alt="sound-on" />
       </button>
     </main>

@@ -97,3 +97,79 @@
     transform: scale(0.9);
   }
 }
+.progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+
+  &-text {
+    font-family: 'Lilita One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+
+    color: #ffffff;
+
+    @include textborder;
+  }
+  &-line {
+    position: relative;
+    z-index: 0;
+    height: 2.35rem;
+    width: 100%;
+    transform: skewX(-10deg);
+    border-radius: 0.25rem;
+    overflow: hidden;
+    border: 2px solid $black;
+
+    &:after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background: $black-0;
+    }
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background: #a1472d;
+      z-index: 1;
+
+      &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 45%;
+        background: #b65a19;
+      }
+      &:after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 100%;
+        height: 100%;
+        width: 15px;
+        background: linear-gradient(
+          -90deg,
+          #dad9da,
+          #dad9da 40%,
+          #bba166 40%,
+          #bba166
+        );
+      }
+    }
+  }
+}

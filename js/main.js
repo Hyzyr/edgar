@@ -28,3 +28,6 @@ muteButton.onclick = () => {
   muteAll(!isMuted);
   muteButton.classList.toggle('off', !isMuted);
 };
+
+window.addEventListener('blur', () => muteAll());
+window.addEventListener('focus', () => muteAll(false));
