@@ -406,6 +406,19 @@ svg {
   justify-content: center;
   gap: 2em;
 }
+.preloader__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 50rem;
+  width: 70%;
+  display: none;
+}
+.preloader__title img {
+  width: 100%;
+  height: auto;
+}
 .preloader__image {
   position: relative;
   display: flex;
@@ -1010,5 +1023,3 @@ svg {
     font-size: 8px;
   }
 }
-
-/*# sourceMappingURL=main.css.map */

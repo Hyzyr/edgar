@@ -39,14 +39,35 @@ const preloadSRC = (item) => {
 const showButton = (whenDone) => {
   preloaderBtn.classList.add('active');
   preloaderBtn.onclick = () => {
-    gsap.to(preloaderAudio, {
-      duration: 0.68,
-      onStart: () => preloaderAudio.play(),
-      onComplete: () => {
-        removePreloader();
-        whenDone();
-      },
-    });
+    gsap
+      .timeline()
+      .to(
+        preloader.querySelectorAll(
+          '.preloader__image,.preloader__progress,.preloader__button'
+        ),
+        { display: 'none', duration: 0 }
+      )
+      .to(preloader.querySelector('.preloader__title'), {
+        display: 'block',
+        duration: 0,
+      })
+      .fromTo(
+        preloader.querySelectorAll('.preloader__title > img'),
+        { opacity: 0, scale: 0.9, y: 20 },
+        { opacity: 1, scale: 1, y: 0, duration: 0.3, delay: 0.4, stagger: 0.2 }
+      )
+      .to(
+        preloaderAudio,
+        {
+          duration: 1,
+          onStart: () => preloaderAudio.play(),
+          onComplete: () => {
+            removePreloader();
+            whenDone();
+          },
+        },
+        '<'
+      );
   };
 };
 const promiseData = { percentage: 0 };

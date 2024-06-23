@@ -34,7 +34,7 @@ const pinner = gsap.to(inventory, {
     pin: true,
     scrub: 1,
     snap: 1,
-    start: 'top 15%',
+    start: 'top 12%',
     end: 'bottom+=200 65%',
     // markers: {
     //   startColor: 'white',
