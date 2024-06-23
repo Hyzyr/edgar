@@ -257,6 +257,7 @@
     }
 
     &-edgar {
+      position: relative;
       width: 23rem;
       flex-shrink: 0;
       z-index: 1;
@@ -287,6 +288,31 @@
             #a725a7 30%,
             #5b006a 150%
           );
+        }
+      }
+      &-ticket {
+        position: absolute;
+        display: flex;
+        bottom: 85%;
+        right: 55%;
+        width: 47%;
+        img {
+          width: 100%;
+          height: auto;
+        }
+
+        span {
+          position: absolute;
+          right: 29%;
+          bottom: 75%;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 1.75rem;
+          line-height: 1.25;
+          color: $white;
+          white-space: nowrap;
+          @include textborder;
+          transform: rotate(-10.26deg);
         }
       }
     }
@@ -327,6 +353,12 @@
             width: 60%;
             height: auto;
             z-index: 1;
+            transition: 0.2s ease-out;
+            pointer-events: all;
+
+            &:hover {
+              transform: translate(-50%, -50%) scale(1.1);
+            }
           }
         }
       }
@@ -448,6 +480,11 @@
     &__inner {
       &-edgar {
         width: 18rem;
+        &-ticket {
+          span {
+            @include textborder(2px);
+          }
+        }
       }
     }
     &__item {

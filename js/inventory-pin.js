@@ -34,15 +34,14 @@ const pinner = gsap.to(inventory, {
     pin: true,
     scrub: 1,
     snap: 1,
-    start: 'top 20%',
+    start: 'top 15%',
     end: 'bottom+=200 65%',
-    // end: () => '+=' + inventory.offsetWidth,
-    // markers: {
-    //   startColor: 'white',
-    //   endColor: 'white',
-    //   fontSize: '48px',
-    //   fontWeight: 'bold',
-    //   indent: 20,
-    // },
+    markers: {
+      startColor: 'white',
+      endColor: 'white',
+      fontSize: '48px',
+      fontWeight: 'bold',
+      indent: 20,
+    },
   },
 });

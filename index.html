@@ -8,6 +8,7 @@
     <link rel="icon" href="./images/edgar-logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="theme-color" content="#a106fc" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"
       rel="stylesheet" />
@@ -70,7 +71,7 @@
           id="pageintro-transition-vidio"></video>
       </div>
     </div>
-    <main class="main">
+    <main class="main" id="main">
       <div class="main__bg bg">
         <audio
           class="hidden"
@@ -81,6 +82,7 @@
           id="main-bg"
           loop
           data-src="./videos/hero-bg-animation.webm"></video>
+        <span class="main-bg-color"></span>
       </div>
       <section class="hero">
         <div class="container">
@@ -96,7 +98,9 @@
               </div>
               <div class="hero__banner">
                 <video
-                id="main-edgar" data-src="videos/edgar-animation-video.webm" loop></video>
+                  id="main-edgar"
+                  data-src="videos/edgar-animation-video.webm"
+                  loop></video>
                 <!-- <img
                   data-src="./images/edgar-animation-video.gif"
                   alt="edgar-animation" /> -->
@@ -152,6 +156,13 @@
                   src="images/components/golden-frame-big.svg"
                   alt="frame" />
                 <img src="images/edgar-final.png" alt="frame" class="_item" />
+              </div>
+              <div class="inventory__inner-edgar-ticket">
+                <img src="images/components/ticket.png" alt="ticket" />
+                <span>
+                  PASO DE <br />
+                  $EDGAR
+                </span>
               </div>
             </div>
             <div class="inventory__inner-items" id="inventory">
@@ -391,7 +402,9 @@
               <a href="https://www.t.me/EDGAR_PORTAL" target="_blank">
                 <img src="./images/social/telegram-logo.png" alt=""
               /></a>
-              <a href="https://x.com/EdgarCutDog" target="_blank"> <img src="./images/social/x-logo.png" alt="" /></a>
+              <a href="https://x.com/EdgarCutDog" target="_blank">
+                <img src="./images/social/x-logo.png" alt=""
+              /></a>
               <a href="#dex">
                 <img src="./images/social/dex-logo.png" alt=""
               /></a>
@@ -399,6 +412,10 @@
           </div>
         </div>
       </footer>
+      <button class="fixedbutton" id="button-mute">
+        <img class="_off" src="images/components/sound-off.png" alt="sound-off" />
+        <img class="_on" src="images/components/sound-on.png" alt="sound-on" />
+      </button>
     </main>
     <script src="./js/gsap.min.js"></script>
     <script src="./js/gsap.scroll-trigger.js"></script>

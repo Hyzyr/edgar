@@ -1,9 +1,3 @@
-@media (max-width: 1860px) {
-  html,
-  body {
-    font-size: 18px;
-  }
-}
 @media (max-width: 1730px) {
   html,
   body {
@@ -28,7 +22,6 @@
   }
   @include home-1025;
 }
-
 @media (max-width: 940px) {
   .container {
     padding: 0 25px;

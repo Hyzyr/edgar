@@ -1,6 +1,8 @@
+const main = document.getElementById('main');
 const mainBg = document.getElementById('main-bg');
 const mainMusic = document.getElementById('main-music');
 const mainEdgar = document.getElementById('main-edgar');
+const muteButton = document.getElementById('button-mute');
 
 const afterPreload = () => {
   initPageIntro({
@@ -14,3 +16,15 @@ const afterPreload = () => {
   });
 };
 preloadAll(afterPreload);
+
+const muteAll = (mute = true) =>
+  document.querySelectorAll('video, audio').forEach((item) => {
+    item.muted = mute;
+  });
+
+muteButton.onclick = () => {
+  let isMuted = muteButton.classList.contains('off');
+
+  muteAll(!isMuted);
+  muteButton.classList.toggle('off', !isMuted);
+};
