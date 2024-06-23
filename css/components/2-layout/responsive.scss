@@ -26,6 +26,7 @@
   .container {
     padding: 0 30px;
   }
+  @include home-1025;
 }
 
 @media (max-width: 940px) {
@@ -34,14 +35,20 @@
   }
 }
 @media (max-width: 768px) {
-  .container {
-    padding: 0 15px;
-  }
 }
 @media (max-width: 580px) {
+  .container {
+    padding: 0 20px;
+  }
   ._hideMob {
     display: none;
   }
+  @include home-580;
 }
 @media (max-width: 460px) {
+  html,
+  body {
+    font-size: 8px;
+  }
+  @include home-460;
 }

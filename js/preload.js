@@ -62,6 +62,8 @@ const preloadAll = (whenDone = () => {}) => {
   Promise.all(promiseArr)
     .then(() => {
       isDone = true;
+      window.scrollTo(0, 0);
+
       if (isClicked) {
         console.log('everythiong downloaded removing preloader');
         removePreloader();

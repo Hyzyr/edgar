@@ -1,7 +1,9 @@
+window.scrollTo(0, 0);
+
 // inventory pin
 const inventory = document.getElementById('inventory');
 const inventoryWrapper = document.getElementById('inventory-wrapper');
-const inventoryContainer = inventoryWrapper.querySelector('.container');
+const inventoryContainer = inventoryWrapper.querySelector('.inventory__inner');
 const inventoryEdgar = inventoryWrapper.querySelector(
   '.inventory__inner-edgar'
 );
@@ -12,24 +14,28 @@ gsap.set(inventoryLine, {
 });
 
 const calcOffset = () => {
-  let offset = inventoryContainer.offsetWidth - inventoryEdgar.offsetWidth;
-  offset = inventory.offsetWidth - offset + inventoryEdgar.offsetWidth / 2;
-
+  let gap = parseInt(getComputedStyle(inventoryContainer).gap);
+  let offset =
+    inventoryContainer.offsetWidth - inventoryEdgar.offsetWidth - gap;
+  offset = inventory.offsetWidth - offset;
+  console.log({ offset, gap });
   return offset;
 };
-console.log({ offset: calcOffset() });
+
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to(inventory, {
-  x: calcOffset() * -1,
+const pinner = gsap.to(inventory, {
+  x: () => {
+    return (calcOffset() + document.body.clientWidth * 0.05) * -1;
+  },
   ease: 'none',
   scrollTrigger: {
     trigger: inventoryWrapper,
     pin: true,
     scrub: 1,
     snap: 1,
-    start: 'top top',
-    end: 'bottom-=300 top',
+    start: 'top 20%',
+    end: 'bottom+=200 65%',
     // end: () => '+=' + inventory.offsetWidth,
     // markers: {
     //   startColor: 'white',

@@ -14,7 +14,7 @@
     <title>$EDGAR | SUPER DOG</title>
   </head>
 
-  <body>
+  <body style="overflow: hidden">
     <div class="preloader" id="preloader">
       <div class="preloader__title">
         <span
@@ -35,6 +35,14 @@
     </div>
     <div class="pageintro">
       <div class="pageintro__case">
+        <audio
+          id="chest-open-sound"
+          data-src="sounds/chest-open-sound.MP3"
+          class="hidden"></audio>
+        <audio
+          id="chest-drop-sound"
+          data-src="sounds/chest-drop-sound.MP3"
+          class="hidden"></audio>
         <div class="ratioImage">
           <img
             data-src="./images/case-drop-animation.gif"
@@ -77,11 +85,6 @@
       <section class="hero">
         <div class="container">
           <div class="hero__inner">
-            <div class="hero__banner">
-              <img
-                data-src="./images/edgar-animation-video.gif"
-                alt="edgar-animation" />
-            </div>
             <div class="hero__content">
               <div class="hero__content-header">
                 <h3>NEW BRAWLER!</h3>
@@ -90,6 +93,13 @@
                   <small>Rich Perro Loco</small>
                   <span>2/7 Epic Brawlers</span>
                 </div>
+              </div>
+              <div class="hero__banner">
+                <video
+                id="main-edgar" data-src="videos/edgar-animation-video.webm" loop></video>
+                <!-- <img
+                  data-src="./images/edgar-animation-video.gif"
+                  alt="edgar-animation" /> -->
               </div>
               <div class="hero__content-text">
                 Edgar is no normal dog ese. Edgar is your Solana dawg puta
@@ -100,24 +110,24 @@
               <div class="hero__content-links">
                 <ul>
                   <li>
-                    <a href="#CA"></a>
+                    <!-- <a href="#CA" target="_blank"></a> -->
                     <img src="./images/social/CA.png" alt="" />
-                    <span class="_pink">CA</span>
+                    <span class="_pink">CA : Soon Cabrón</span>
                   </li>
                   <li>
-                    <a href="#telegram"></a>
+                    <a href="https://www.t.me/EDGAR_PORTAL" target="_blank"></a>
                     <img src="./images/social/telegram-logo.png" alt="" />
                     <span class="_green">TELEGRAM</span>
                   </li>
                   <li>
-                    <a href="#x"></a>
+                    <a href="https://x.com/EdgarCutDog" target="_blank"></a>
                     <img src="./images/social/x-logo.png" alt="" />
                     <span class="_blue">TWITTER/X</span>
                   </li>
                   <li>
-                    <a href="#dex"></a>
+                    <!-- <a href="#dex" target="_blank"></a> -->
                     <img src="./images/social/dex-logo.png" alt="" />
-                    <span class="_orange">DEX</span>
+                    <span class="_orange">DEX : Soon Cabrón</span>
                   </li>
                 </ul>
                 <a href="#" class="circlebutton">
@@ -378,10 +388,10 @@
                 alt="edgar-golden-text" />
             </a>
             <div class="footer__inner-social">
-              <a href="#telegram">
+              <a href="https://www.t.me/EDGAR_PORTAL" target="_blank">
                 <img src="./images/social/telegram-logo.png" alt=""
               /></a>
-              <a href="#x"> <img src="./images/social/x-logo.png" alt="" /></a>
+              <a href="https://x.com/EdgarCutDog" target="_blank"> <img src="./images/social/x-logo.png" alt="" /></a>
               <a href="#dex">
                 <img src="./images/social/dex-logo.png" alt=""
               /></a>
