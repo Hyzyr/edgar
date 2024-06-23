@@ -36,12 +36,12 @@ const pinner = gsap.to(inventory, {
     snap: 1,
     start: 'top 15%',
     end: 'bottom+=200 65%',
-    markers: {
-      startColor: 'white',
-      endColor: 'white',
-      fontSize: '48px',
-      fontWeight: 'bold',
-      indent: 20,
-    },
+    // markers: {
+    //   startColor: 'white',
+    //   endColor: 'white',
+    //   fontSize: '48px',
+    //   fontWeight: 'bold',
+    //   indent: 20,
+    // },
   },
 });
